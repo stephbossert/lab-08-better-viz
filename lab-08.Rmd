@@ -1,7 +1,7 @@
 ---
 title: "Lab 08 - Conveying the right message through visualisation"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Steph Bossert"
+date: "2 April 21"
 output: github_document
 ---
 
@@ -9,17 +9,72 @@ output: github_document
 
 ```{r load-packages, message=FALSE}
 library(tidyverse) 
+library(ggplot2)
 ```
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r new data frame}
+f <- tribble(
+  ~date, ~cases, ~mask,
+  "7/12", 26, "Y",
+  "7/13", 20, "Y",
+  "7/14", 20, "Y",
+  "7/15", 20.5, "Y",
+  "7/16", 20, "Y",
+  "7/17", 20, "Y",
+  "7/18", 20.5, "Y",
+  "7/19", 20, "Y",
+  "7/20", 20.5, "Y",
+  "7/21", 21, "Y",
+  "7/22", 21, "Y",
+  "7/23", 20, "Y",
+  "7/24", 20, "Y",
+  "7/25", 19, "Y",
+  "7/26", 19.5, "Y",
+  "7/27", 17, "Y",
+  "7/28", 16.5, "Y",
+  "7/29", 16.5, "Y",
+  "7/30", 16.5, "Y",
+  "7/31", 16, "Y",
+  "8/1", 15.5, "Y",
+  "8/2", 15.5, "Y",
+  "8/3", 15.5, "Y",
+  "7/12", 20.5, "N",
+  "7/13", 20, "N",
+  "7/14", 20.5, "N",
+  "7/15", 20.7, "N",
+  "7/16", 20.9, "N",
+  "7/17", 20.8, "N",
+  "7/18", 20.5, "N",
+  "7/19", 20.3, "N",
+  "7/20", 20, "N",
+  "7/21", 20, "N",
+  "7/22", 20.3, "N",
+  "7/23", 20.3, "N",
+  "7/24", 20.7, "N",
+  "7/25", 20.9, "N",
+  "7/26", 19.5, "N",
+  "7/27", 21, "N",
+  "7/28", 20.7, "N",
+  "7/29", 20.7, "N",
+  "7/30", 20.5, "N",
+  "7/31", 20.5, "N",
+  "8/1", 20.4, "N",
+  "8/2", 20.5, "N",
+  "8/3", 20.6, "N",
+  
+  
+)
+View(f)
+```
 
-### Exercise 2
+```{r graph newdata frame}
+ggplot(data=f, aes(x=date, y=cases, group=mask)) +
+  geom_line(aes(color=mask))+
+  geom_point(aes(color=mask))
 
+```
 ...
 
 Add exercise headings as needed.
