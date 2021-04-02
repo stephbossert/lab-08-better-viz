@@ -69,6 +69,8 @@ f <- tribble(
 View(f)
 ```
 
+###Exercise 2
+
 ```{r graph newdata frame}
 ggplot(data=f, aes(x=date, y=cases, group=mask)) +
   geom_line(aes(color=mask))+
@@ -77,4 +79,8 @@ ggplot(data=f, aes(x=date, y=cases, group=mask)) +
 ```
 ...
 
-Add exercise headings as needed.
+###Exercise 3
+###The new graph tells us that case numbers go down with mask wear, while they stay about the same without masks
+
+###Exercise 4
+###The data tells us that masks work! But, should we wear two, three? 
